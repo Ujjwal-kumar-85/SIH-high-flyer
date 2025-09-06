@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Restaurants of Jharkhand</title>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #fffdf7;
+      color: #333;
+    }
+
+    header {
+      background: #d84315;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      font-size: 1.8rem;
+      font-weight: 700;
+    }
+
+    #search-bar {
+      text-align: center;
+      margin: 20px;
+    }
+    #search-input {
+      width: 60%;
+      padding: 12px;
+      font-size: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+
+    .card-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .card {
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+      overflow: hidden;
+      transition: transform 0.3s, box-shadow 0.3s;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+    }
+
+    .card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .card-content {
+      padding: 15px;
+      flex-grow: 1;
+    }
+
+    .card-content h3 {
+      margin: 0 0 8px;
+      font-size: 1.2rem;
+      color: #d84315;
+    }
+
+    .card-content p {
+      font-size: 0.95rem;
+      margin-bottom: 8px;
+      color: #555;
+    }
+
+    .price {
+      font-weight: 600;
+      color: #2e7d32;
+      margin-bottom: 10px;
+    }
+
+    .stars {
+      color: gold;
+      font-size: 1.1rem;
+      margin-bottom: 12px;
+    }
+
+    .book-btn {
+      display: block;
+      text-align: center;
+      background: #d84315;
+      color: white;
+      padding: 10px 15px;
+      margin: 10px 15px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background 0.3s;
+    }
+
+    .book-btn:hover {
+      background: #a33210;
+    }
+  </style>
+</head>
+<body>
+
+  <header>🍴 Famous Restaurants of Jharkhand</header>
+
+  <div id="search-bar">
+    <input id="search-input" type="text" placeholder="Search restaurants in Jharkhand...">
+  </div>
+
+  <div class="card-container" id="restaurant-list">
+    <!-- Restaurant Cards -->
+    <div class="card">
+      <img src="image/Kaveri restaurent.jpg" alt="Kaveri Restaurant">
+      <div class="card-content">
+        <h3>Kaveri Restaurant, Ranchi</h3>
+        <p>Iconic vegetarian restaurant known for North & South Indian thalis.</p>
+        <p class="price">₹250 – ₹500 per person</p>
+        <div class="stars">★★★★★</div>
+      </div>
+      <a href="booking.html" class="book-btn">Book Now</a>
+    </div>
+
+    <div class="card">
+      <img src="image/The Great Kabab Factory, Ranchi.jpg" alt="The Great Kabab Factory">
+      <div class="card-content">
+        <h3>The Great Kabab Factory, Ranchi</h3>
+        <p>Specializes in Mughlai cuisine, kebabs, and tandoori dishes.</p>
+        <p class="price">₹600 – ₹1200 per person</p>
+        <div class="stars">★★★★☆</div>
+      </div>
+      <a href="booking.html" class="book-btn">Book Now</a>
+    </div>
+
+    <div class="card">
+      <img src="image/Yellow Sapphire, Ranchi.jpg" alt="Yellow Sapphire">
+      <div class="card-content">
+        <h3>Yellow Sapphire, Ranchi</h3>
+        <p>A fine dining experience serving multi-cuisine delicacies.</p>
+        <p class="price">₹800 – ₹1500 per person</p>
+        <div class="stars">★★★★☆</div>
+      </div>
+      <a href="booking.html" class="book-btn">Book Now</a>
+    </div>
+
+    <div class="card">
+      <img src="image/Waterfront Restaurant, Ranchi.jpg" alt="Waterfront Restaurant">
+      <div class="card-content">
+        <h3>Waterfront Restaurant, Ranchi</h3>
+        <p>Beautiful lakeside dining with North Indian and Chinese dishes.</p>
+        <p class="price">₹700 – ₹1400 per person</p>
+        <div class="stars">★★★★★</div>
+      </div>
+      <a href="booking.html" class="book-btn">Book Now</a>
+    </div>
+
+    <div class="card">
+      <img src="image/Moti Mahal Deluxe, Jamshedpur.jpg" alt="Moti Mahal Deluxe">
+      <div class="card-content">
+        <h3>Moti Mahal Deluxe, Jamshedpur</h3>
+        <p>Famous for butter chicken, curries, and traditional tandoori items.</p>
+        <p class="price">₹500 – ₹1000 per person</p>
+        <div class="stars">★★★★☆</div>
+      </div>
+      <a href="booking.html" class="book-btn">Book Now</a>
+    </div>
+
+    <div class="card">
+      <img src="image/Novelty Restaurant, Jamshedpur.jpg" alt="Novelty Restaurant">
+      <div class="card-content">
+        <h3>Novelty Restaurant, Jamshedpur</h3>
+        <p>Popular for biryani and Indo-Chinese food with casual dining.</p>
+        <p class="price">₹300 – ₹700 per person</p>
+        <div class="stars">★★★☆☆</div>
+      </div>
+      <a href="booking.html" class="book-btn">Book Now</a>
+    </div>
+
+    <div class="card">
+      <img src="image/Zaika, Dhanbad.jpg" alt="Zaika">
+      <div class="card-content">
+        <h3>Zaika, Dhanbad</h3>
+        <p>A favorite spot for family dining, serving Indian and Chinese cuisine.</p>
+        <p class="price">₹350 – ₹800 per person</p>
+        <div class="stars">★★★★☆</div>
+      </div>
+      <a href="booking.html" class="book-btn">Book Now</a>
+    </div>
+
+    <div class="card">
+      <img src="image/Blue Diamond, Hazaribagh.jpg" alt="Blue Diamond">
+      <div class="card-content">
+        <h3>Blue Diamond, Hazaribagh</h3>
+        <p>Classic multi-cuisine restaurant known for Indian thalis.</p>
+        <p class="price">₹200 – ₹500 per person</p>
+        <div class="stars">★★★☆☆</div>
+      </div>
+      <a href="booking.html" class="book-btn">Book Now</a>
+    </div>
+
+    <div class="card">
+      <img src="image/Biryani House, Ranchi.jpg" alt="Biryani House">
+      <div class="card-content">
+        <h3>Biryani House, Ranchi</h3>
+        <p>Specialized in different varieties of biryani with rich flavors.</p>
+        <p class="price">₹250 – ₹600 per person</p>
+        <div class="stars">★★★★★</div>
+      </div>
+      <a href="booking.html" class="book-btn">Book Now</a>
+    </div>
+
+    <div class="card">
+      <img src="image/Sonnet Restaurant, Jamshedpur.jpg" alt="Sonnet Restaurant">
+      <div class="card-content">
+        <h3>Sonnet Restaurant, Jamshedpur</h3>
+        <p>Upscale dining with continental, Chinese, and Indian food.</p>
+        <p class="price">₹900 – ₹2000 per person</p>
+        <div class="stars">★★★★☆</div>
+      </div>
+      <a href="booking.html" class="book-btn">Book Now</a>
+    </div>
+  </div>
+
+  <script>
+    const searchInput = document.getElementById("search-input");
+    const restaurantList = document.getElementById("restaurant-list");
+    const cards = restaurantList.getElementsByClassName("card");
+
+    searchInput.addEventListener("keyup", function() {
+      const filter = searchInput.value.toLowerCase();
+      for (let i = 0; i < cards.length; i++) {
+        const title = cards[i].getElementsByTagName("h3")[0];
+        if (title.innerText.toLowerCase().includes(filter)) {
+          cards[i].style.display = "";
+        } else {
+          cards[i].style.display = "none";
+        }
+      }
+    });
+  </script>
+</body>
+</html>

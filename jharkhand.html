@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Visit Jharkhand - Discover Nature & Culture</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+    :root {
+      --green: #e5eee6;
+      --green-light: #4caf50;
+      --white: #fff;
+      --shadow: rgba(0, 0, 0, 0.1);
+      --font-primary: 'Poppins', sans-serif;
+      --border-radius: 12px;
+      --transition: 0.3s ease;
+    }
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      font-family: var(--font-primary);
+      background-color: var(--white);
+      color: #222;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+    header {
+      position: sticky;
+      top: 0;
+      background: var(--green);
+      color: var(--white);
+      z-index: 1000;
+      box-shadow: 0 2px 8px var(--shadow);
+    }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 60px;
+    }
+    nav .logo {
+      font-weight: 700;
+      font-size: 1.5rem;
+      letter-spacing: 1.2px;
+      user-select: none;
+    
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 12px;
+      margin: 0;
+      padding: 0;
+    }
+    nav ul li {
+      font-weight: 600;
+      font-size: 0.95rem;
+      cursor: pointer;
+      position: relative;
+    }
+    nav ul li:hover,
+    nav ul li:focus-within {
+      color: var(--green-light);
+    }
+    nav ul li:focus-within {
+      outline: none;
+    }
+    nav ul li a {
+      color: black;
+      padding: 8px 0;
+      display: inline-block;
+      transition: color var(--transition);
+    }
+    nav ul li a:hover,
+    nav ul li a:focus {
+      color: var(--green-light);
+      outline: none;
+    }
+    /* Hero Section */
+    .hero {
+      position: relative;
+      height: 100vh;
+      background: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1470&q=80') no-repeat center center/cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 0 20px;
+      color: var(--white);
+    }
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(46, 125, 50, 0.7);
+      z-index: 0;
+    }
+    .hero-content {
+      position: relative;
+      max-width: 700px;
+      z-index: 1;
+    }
+    .hero-content h1 {
+      font-size: 3.5rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+      text-shadow: 2px 2px 8px rgba(0,0,0,0.6);
+      line-height: 1.1;
+    }
+    .hero-content p {
+      font-size: 1.25rem;
+      margin-bottom: 32px;
+      text-shadow: 1px 1px 6px rgba(0,0,0,0.5);
+    }
+    .hero-buttons {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .btn {
+      background-color: var(--white);
+      color: var(--green);
+      border: none;
+      padding: 14px 28px;
+      font-weight: 700;
+      font-size: 1rem;
+      border-radius: var(--border-radius);
+      cursor: pointer;
+      box-shadow: 0 6px 15px var(--shadow);
+      transition: background-color var(--transition), color var(--transition), box-shadow var(--transition);
+      user-select: none;
+      min-width: 160px;
+      text-align: center;
+    }
+    .btn:hover,
+    .btn:focus {
+      background-color: var(--green-light);
+      color: var(--white);
+      box-shadow: 0 8px 20px rgba(46, 125, 50, 0.6);
+      outline: none;
+    }
+    /* Statistics Section */
+    .stats {
+      max-width: 1200px;
+      margin: 60px auto 80px;
+      padding: 0 20px;
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+    .stat-card {
+      background: var(--white);
+      border-radius: var(--border-radius);
+      box-shadow: 0 8px 20px var(--shadow);
+      padding: 40px 30px;
+      flex: 1 1 280px;
+      max-width: 320px;
+      text-align: center;
+      transition: box-shadow var(--transition), transform var(--transition);
+      cursor: default;
+    }
+    .stat-card:hover,
+    .stat-card:focus-within {
+      box-shadow: 0 12px 30px rgba(46, 125, 50, 0.3);
+      transform: translateY(-6px);
+      outline: none;
+    }
+    .stat-number {
+      font-size: 3.5rem;
+      font-weight: 700;
+      color: var(--green);
+      margin-bottom: 12px;
+      user-select: text;
+    }
+    .stat-text {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: #444;
+      user-select: text;
+    }
+    /* Responsive */
+    @media (max-width: 900px) {
+      .hero-content h1 {
+        font-size: 2.8rem;
+      }
+      .hero-content p {
+        font-size: 1.1rem;
+      }
+      .stats {
+        gap: 24px;
+      }
+      .stat-card {
+        max-width: 100%;
+      }
+    }
+    @media (max-width: 480px) {
+      .hero-content h1 {
+        font-size: 2.2rem;
+      }
+      .hero-content p {
+        font-size: 1rem;
+      }
+      .btn {
+        min-width: 140px;
+        padding: 12px 20px;
+        font-size: 0.95rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav aria-label="Primary navigation">
+        <div class="logo" tabindex="0">Visit Jharkhand</div>
+        <ul>
+          <li><a href="#home" tabindex="0">Home</a></li>
+          <li><a href="about_jharkhand.html" tabindex="0">About Jharkhand</a></li>
+          <li><a href="Ai_trip.html" tabindex="0">AI Trip Planner</a></li>
+          <li><a href="#rooms" tabindex="0">Rooms</a></li>
+          <li><a href="temple.html" tabindex="0">Temples</a></li>
+          <li><a href="restaurent.html" tabindex="0">Food</a></li>
+          <li><a href="zoo.html" tabindex="0">Zoo & Wildlife</a></li>
+          <li><a href="market.html" tabindex="0">Marketplace</a></li>
+          <li><a href="re" tabindex="0">Rewards</a></li>
+          <li><a href="sign_in.html" tabindex="0">Sign In</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero" id="home" role="banner" aria-label="Discover Jharkhand hero section">
+    <div class="hero-content">
+      <h1>Discover Jharkhand – Where Nature Meets Culture</h1>
+      <p>Experience pristine waterfalls, ancient temples, vibrant tribal culture, and authentic local cuisine of India’s natural paradise.</p>
+      <div class="hero-buttons">
+        <button class="btn" type="button" aria-label="Plan Your Trip">Plan Your Trip</button>
+        <button class="btn" type="button" aria-label="Book a Room">Book a Room</button>
+        <button class="btn" type="button" aria-label="Sign Up and Earn Rewards">Sign Up &amp; Earn Rewards</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="stats" aria-label="Tourism statistics">
+    <article class="stat-card" tabindex="0">
+      <div class="stat-number">50+</div>
+      <div class="stat-text">Waterfalls &amp; Natural Sites</div>
+    </article>
+    <article class="stat-card" tabindex="0">
+      <div class="stat-number">30+</div>
+      <div class="stat-text">Ancient Temples</div>
+    </article>
+    <article class="stat-card" tabindex="0">
+      <div class="stat-number">32</div>
+      <div class="stat-text">Tribal Communities</div>
+    </article>
+  </section>
+  <!-- Why Choose Jharkhand Section -->
+<section id="why-choose" style="background-color:#f7f9f4; padding:60px 20px; font-family: 'Poppins', sans-serif;">
+  <div style="max-width:1100px; margin:0 auto; text-align:center; margin-bottom:48px;">
+    <h2 style="font-size:2.8rem; color:#2e7d32; margin-bottom:12px; font-weight:700;">Why Choose Jharkhand?</h2>
+    <p style="font-size:1.15rem; color:#556b2f; max-width:600px; margin:0 auto;">
+      Discover the perfect blend of natural beauty, spiritual heritage, and rich cultural traditions.
+    </p>
+  </div>
+
+  <div style="max-width:1100px; margin:0 auto; display:grid; grid-template-columns: repeat(auto-fit,minmax(280px,1fr)); gap:32px;">
+    <!-- Card 1 -->
+    <article tabindex="0" style="background:#e6f2e6; border-radius:16px; box-shadow:0 6px 18px rgba(46,125,50,0.15); padding:24px; display:flex; flex-direction:column; align-items:center; text-align:center;">
+      <div style="font-size:48px; color:#4caf50; margin-bottom:16px;" aria-hidden="true">🌳</div>
+      <h3 style="color:#2e7d32; font-weight:700; margin-bottom:12px;">Eco-Tourism</h3>
+      <p style="color:#3a5a2a; font-weight:600; margin-bottom:16px;">Explore pristine forests, national parks, and biodiversity.</p>
+      <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80" alt="Lush green forest in Jharkhand" style="width:100%; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.1); margin-bottom:16px;" />
+      <a href="#" style="color:#2e7d32; font-weight:700; text-decoration:none; border: 2px solid #2e7d32; padding:8px 16px; border-radius:12px; transition: background-color 0.3s, color 0.3s;">Learn More</a>
+    </article>
+
+    <!-- Card 2 -->
+    <article tabindex="0" style="background:#e6f2e6; border-radius:16px; box-shadow:0 6px 18px rgba(46,125,50,0.15); padding:24px; display:flex; flex-direction:column; align-items:center; text-align:center;">
+      <div style="font-size:48px; color:#4caf50; margin-bottom:16px;" aria-hidden="true">💧</div>
+      <h3 style="color:#2e7d32; font-weight:700; margin-bottom:12px;">Waterfalls</h3>
+      <p style="color:#3a5a2a; font-weight:600; margin-bottom:16px;">Witness majestic Hundru, Dassam, and Jonha falls.</p>
+      <img src="https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=400&q=80" alt="Majestic waterfall in Jharkhand" style="width:100%; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.1); margin-bottom:16px;" />
+      <a href="#" style="color:#2e7d32; font-weight:700; text-decoration:none; border: 2px solid #2e7d32; padding:8px 16px; border-radius:12px; transition: background-color 0.3s, color 0.3s;">Learn More</a>
+    </article>
+
+    <!-- Card 3 -->
+    <article tabindex="0" style="background:#e6f2e6; border-radius:16px; box-shadow:0 6px 18px rgba(46,125,50,0.15); padding:24px; display:flex; flex-direction:column; align-items:center; text-align:center;">
+      <div style="font-size:48px; color:#4caf50; margin-bottom:16px;" aria-hidden="true">⛩️</div>
+      <h3 style="color:#2e7d32; font-weight:700; margin-bottom:12px;">Temples</h3>
+      <p style="color:#3a5a2a; font-weight:600; margin-bottom:16px;">Sacred pilgrimages like Baidyanath Dham and Parasnath Hills.</p>
+      <img src="https://images.unsplash.com/photo-1549887534-0a7a7a7a7a7a?auto=format&fit=crop&w=400&q=80" alt="Ancient temple in Jharkhand" style="width:100%; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.1); margin-bottom:16px;" />
+      <a href="#" style="color:#2e7d32; font-weight:700; text-decoration:none; border: 2px solid #2e7d32; padding:8px 16px; border-radius:12px; transition: background-color 0.3s, color 0.3s;">Learn More</a>
+    </article>
+
+    <!-- Card 4 -->
+    <article tabindex="0" style="background:#e6f2e6; border-radius:16px; box-shadow:0 6px 18px rgba(46,125,50,0.15); padding:24px; display:flex; flex-direction:column; align-items:center; text-align:center;">
+      <div style="font-size:48px; color:#4caf50; margin-bottom:16px;" aria-hidden="true">🪶</div>
+      <h3 style="color:#2e7d32; font-weight:700; margin-bottom:12px;">Tribal Culture</h3>
+      <p style="color:#3a5a2a; font-weight:600; margin-bottom:16px;">Rich heritage of 32 tribal communities with fairs and festivals.</p>
+      <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=400&q=80" alt="Tribal cultural festival in Jharkhand" style="width:100%; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.1); margin-bottom:16px;" />
+      <a href="#" style="color:#2e7d32; font-weight:700; text-decoration:none; border: 2px solid #2e7d32; padding:8px 16px; border-radius:12px; transition: background-color 0.3s, color 0.3s;">Learn More</a>
+    </article>
+
+    <!-- Card 5 -->
+    <article tabindex="0" style="background:#e6f2e6; border-radius:16px; box-shadow:0 6px 18px rgba(46,125,50,0.15); padding:24px; display:flex; flex-direction:column; align-items:center; text-align:center;">
+      <div style="font-size:48px; color:#4caf50; margin-bottom:16px;" aria-hidden="true">🍲</div>
+      <h3 style="color:#2e7d32; font-weight:700; margin-bottom:12px;">Local Food</h3>
+      <p style="color:#3a5a2a; font-weight:600; margin-bottom:16px;">Authentic cuisine like Dhuska, Litti-Chokha, Handia.</p>
+      <img src="https://images.unsplash.com/photo-1543352634-0a7a7a7a7a7a?auto=format&fit=crop&w=400&q=80" alt="Traditional Jharkhand cuisine" style="width:100%; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.1); margin-bottom:16px;" />
+      <a href="#" style="color:#2e7d32; font-weight:700; text-decoration:none; border: 2px solid #2e7d32; padding:8px 16px; border-radius:12px; transition: background-color 0.3s, color 0.3s;">Learn More</a>
+    </article>
+  </div>
+
+  <!-- Smart Trip Planning Section -->
+  <div style="max-width:1100px; margin:80px auto 40px; padding:0 20px; text-align:center;">
+    <h2 style="font-size:2.4rem; color:#2e7d32; font-weight:700; margin-bottom:16px;">Smart Trip Planning Made Easy</h2>
+  </div>
+
+  <div style="max-width:1100px; margin:0 auto; display:grid; grid-template-columns: repeat(auto-fit,minmax(260px,1fr)); gap:28px; padding:0 20px 60px;">
+    <!-- Info Card 1 -->
+    <article tabindex="0" style="background:#f0f5eb; border-radius:16px; box-shadow:0 4px 14px rgba(46,125,50,0.15); padding:24px; text-align:center; color:#2e7d32;">
+      <div style="font-size:40px; margin-bottom:16px;" aria-hidden="true">🤖</div>
+      <h3 style="font-weight:700; margin-bottom:12px;">AI Powered</h3>
+      <p style="font-weight:600;">Personalized trip plans tailored to your preferences.</p>
+    </article>
+
+    <!-- Info Card 2 -->
+    <article tabindex="0" style="background:#f0f5eb; border-radius:16px; box-shadow:0 4px 14px rgba(46,125,50,0.15); padding:24px; text-align:center; color:#2e7d32;">
+      <div style="font-size:40px; margin-bottom:16px;" aria-hidden="true">💰</div>
+      <h3 style="font-weight:700; margin-bottom:12px;">Budget Planning</h3>
+      <p style="font-weight:600;">Get suggestions for stays and tours within your budget.</p>
+    </article>
+
+    <!-- Info Card 3 -->
+    <article tabindex="0" style="background:#f0f5eb; border-radius:16px; box-shadow:0 4px 14px rgba(46,125,50,0.15); padding:24px; text-align:center; color:#2e7d32;">
+      <div style="font-size:40px; margin-bottom:16px;" aria-hidden="true">⏰</div>
+      <h3 style="font-weight:700; margin-bottom:12px;">Time Optimization</h3>
+      <p style="font-weight:600;">Smart schedules to maximize experiences.</p>
+    </article>
+  </div>
+</section>
+<footer style="background-color:#1b5e20; color:#fff; font-family: 'Poppins', sans-serif; margin-top:80px;">
+  <!-- CTA Banner -->
+  <div style="background-color:#2e7d32; text-align:center; padding:40px 20px; border-radius: 12px 12px 0 0;">
+    <h2 style="margin:0 0 16px; font-weight:700; font-size:2rem;">Ready to start your journey?</h2>
+    <button style="background:#4caf50; border:none; padding:14px 36px; font-size:1.1rem; font-weight:700; color:#fff; border-radius:30px; cursor:pointer; box-shadow: 0 6px 15px rgba(76,175,80,0.5); transition: background-color 0.3s ease;">
+      Get Started
+    </button>
+  </div>
+
+  <!-- Main Footer Content -->
+  <div class="container" style="max-width:1200px; margin:0 auto; padding:60px 20px 40px; display:flex; flex-wrap:wrap; gap:40px; justify-content: space-between;">
+    <!-- Brand Info -->
+    <div style="flex:1 1 220px; min-width:220px;">
+      <div style="display:flex; align-items:center; gap:12px; margin-bottom:16px;">
+        <svg width="40" height="40" viewBox="0 0 64 64" fill="#4caf50" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+          <circle cx="32" cy="32" r="30" stroke="#fff" stroke-width="4" fill="none"/>
+          <path d="M32 10 L42 54 L22 54 Z" fill="#4caf50"/>
+        </svg>
+        <span style="font-size:1.5rem; font-weight:700; user-select:none;">Visit Jharkhand</span>
+      </div>
+      <p style="color:#c8e6c9; line-height:1.5; font-size:0.95rem; margin-bottom:24px;">
+        Discover the natural beauty and rich tribal culture of Jharkhand.<br />
+        Where nature meets tradition.
+      </p>
+      <div style="display:flex; gap:16px; font-size:1.4rem;">
+        <a href="#" aria-label="Facebook" style="color:#c8e6c9; transition: color 0.3s;" onmouseover="this.style.color='#4caf50'" onmouseout="this.style.color='#c8e6c9'">
+          <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path d="M22 12a10 10 0 1 0-11.5 9.9v-7h-2v-3h2v-2c0-2 1-3 3-3h2v3h-2c-.5 0-1 .5-1 1v1h3l-.5 3h-2.5v7A10 10 0 0 0 22 12z"/>
+          </svg>
+        </a>
+        <a href="#" aria-label="Twitter" style="color:#c8e6c9; transition: color 0.3s;" onmouseover="this.style.color='#4caf50'" onmouseout="this.style.color='#c8e6c9'">
+          <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path d="M22.46 6c-.77.35-1.6.58-2.46.69a4.3 4.3 0 0 0 1.88-2.37 8.59 8.59 0 0 1-2.72 1.04 4.28 4.28 0 0 0-7.3 3.9A12.15 12.15 0 0 1 3.15 4.6a4.28 4.28 0 0 0 1.32 5.7 4.25 4.25 0 0 1-1.94-.54v.05a4.28 4.28 0 0 0 3.44 4.2 4.3 4.3 0 0 1-1.93.07 4.28 4.28 0 0 0 4 3 8.6 8.6 0 0 1-5.3 1.83A8.7 8.7 0 0 1 2 18.13a12.14 12.14 0 0 0 6.56 1.92c7.88 0 12.2-6.53 12.2-12.2 0-.19 0-.37-.01-.56A8.7 8.7 0 0 0 22.46 6z"/>
+          </svg>
+        </a>
+        <a href="#" aria-label="Instagram" style="color:#c8e6c9; transition: color 0.3s;" onmouseover="this.style.color='#4caf50'" onmouseout="this.style.color='#c8e6c9'">
+          <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path d="M7 2C4.243 2 2 4.243 2 7v10c0 2.757 2.243 5 5 5h10c2.757 0 5-2.243 5-5V7c0-2.757-2.243-5-5-5H7zm10 2a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm-5 3a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6z"/>
+          </svg>
+        </a>
+        <a href="#" aria-label="YouTube" style="color:#c8e6c9; transition: color 0.3s;" onmouseover="this.style.color='#4caf50'" onmouseout="this.style.color='#c8e6c9'">
+          <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path d="M19.8 7.2a2.4 2.4 0 0 0-1.7-1.7C16.7 5 12 5 12 5s-4.7 0-6.1.5a2.4 2.4 0 0 0-1.7 1.7A25.3 25.3 0 0 0 4 12a25.3 25.3 0 0 0 .2 4.8 2.4 2.4 0 0 0 1.7 1.7c1.4.5 6.1.5 6.1.5s4.7 0 6.1-.5a2.4 2.4 0 0 0 1.7-1.7A25.3 25.3 0 0 0 20 12a25.3 25.3 0 0 0-.2-4.8zM10 15.5v-7l6 3.5-6 3.5z"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+
+    <!-- Quick Links -->
+    <nav aria-label="Quick links" style="flex:1 1 180px; min-width:180px;">
+      <h3 style="font-weight:700; font-size:1.2rem; margin-bottom:20px; color:#a5d6a7;">Quick Links</h3>
+      <ul style="list-style:none; padding:0; margin:0; display:flex; flex-direction: column; gap:12px;">
+        <li><a href="#about" style="color:#c8e6c9; font-weight:600; transition: color 0.3s;">About Jharkhand</a></li>
+        <li><a href="#planner" style="color:#c8e6c9; font-weight:600; transition: color 0.3s;">AI Trip Planner</a></li>
+        <li><a href="#temples" style="color:#c8e6c9; font-weight:600; transition: color 0.3s;">Temples</a></li>
+        <li><a href="#wildlife" style="color:#c8e6c9; font-weight:600; transition: color 0.3s;">Wildlife</a></li>
+      </ul>
+    </nav>
+
+    <!-- Services -->
+    <nav aria-label="Services" style="flex:1 1 180px; min-width:180px;">
+      <h3 style="font-weight:700; font-size:1.2rem; margin-bottom:20px; color:#a5d6a7;">Services</h3>
+      <ul style="list-style:none; padding:0; margin:0; display:flex; flex-direction: column; gap:12px;">
+        <li><a href="#accommodation" style="color:#c8e6c9; font-weight:600; transition: color 0.3s;">Accommodation</a></li>
+        <li><a href="#food" style="color:#c8e6c9; font-weight:600; transition: color 0.3s;">Local Food</a></li>
+        <li><a href="#marketplace" style="color:#c8e6c9; font-weight:600; transition: color 0.3s;">Marketplace</a></li>
+        <li><a href="#rewards" style="color:#c8e6c9; font-weight:600; transition: color 0.3s;">Rewards Program</a></li>
+      </ul>
+    </nav>
+
+    <!-- Contact Us -->
+    <section aria-label="Contact us" style="flex:1 1 220px; min-width:220px;">
+      <h3 style="font-weight:700; font-size:1.2rem; margin-bottom:20px; color:#a5d6a7;">Contact Us</h3>
+      <ul style="list-style:none; padding:0; margin:0; display:flex; flex-direction: column; gap:16px; font-weight:600; color:#c8e6c9;">
+        <li style="display:flex; align-items:center; gap:12px;">
+          <svg width="20" height="20" fill="currentColor" aria-hidden="true" focusable="false" style="flex-shrink:0;">
+            <path d="M3 5a2 2 0 0 1 2-2h1.586a1 1 0 0 1 .707.293l1.414 1.414a1 1 0 0 0 .707.293H15a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5z"/>
+          </svg>
+          <span>+91 98765 43210</span>
+        </li>
+        <li style="display:flex; align-items:center; gap:12px;">
+          <svg width="20" height="20" fill="currentColor" aria-hidden="true" focusable="false" style="flex-shrink:0;">
+            <path d="M2 4a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V4z"/>
+            <path d="M22 4l-10 7L2 4"/>
+          </svg>
+          <span>info@visithjarkhand.in</span>
+        </li>
+        <li style="display:flex; align-items:center; gap:12px;">
+          <svg width="20" height="20" fill="currentColor" aria-hidden="true" focusable="false" style="flex-shrink:0;">
+            <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zM12 11.5a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5z"/>
+          </svg>
+          <address style="font-style: normal;">
+            Jharkhand Tourism Office,<br />
+            Ranchi, Jharkhand, India
+          </address>
+        </li>
+      </ul>
+    </section>
+  </div>
+
+  <!-- Bottom Footer -->
+  <div style="border-top: 1px solid #2e7d32; padding: 20px 20px; max-width:1200px; margin: 0 auto; display:flex; flex-wrap: wrap; justify-content: space-between; font-size: 0.9rem; color:#a5d6a7;">
+    <div style="flex:1 1 300px; min-width: 280px; margin-bottom: 12px;">
+      © 2025 Government of Jharkhand. All rights reserved.
+    </div>
+    <nav aria-label="Secondary footer links" style="flex:1 1 300px; min-width: 280px; display:flex; gap:24px; justify-content: flex-end; flex-wrap: wrap;">
+      <a href="#contact" style="color:#a5d6a7; font-weight:600; transition: color 0.3s;">Contact</a>
+      <a href="#reviews" style="color:#a5d6a7; font-weight:600; transition: color 0.3s;">Reviews</a>
+      <a href="#admin" style="color:#a5d6a7; font-weight:600; transition: color 0.3s;">Admin</a>
+    </nav>
+  </div>
+</footer>
+
+
+</body>
+</html>

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rewards & Offers</title>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+      color: #333;
+    }
+
+    header {
+      background: linear-gradient(90deg, #ff6f61, #d84315);
+      color: white;
+      padding: 30px;
+      text-align: center;
+      font-size: 2rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+
+    .reward-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+      padding: 30px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .reward-card {
+      background: white;
+      border-radius: 16px;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+      transition: transform 0.3s, box-shadow 0.3s;
+      position: relative;
+    }
+
+    .reward-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    }
+
+    .reward-card img {
+      width: 80px;
+      height: 80px;
+      object-fit: contain;
+      margin-bottom: 15px;
+    }
+
+    .reward-card h3 {
+      margin: 10px 0;
+      font-size: 1.3rem;
+      color: #d84315;
+    }
+
+    .reward-card p {
+      font-size: 0.95rem;
+      color: #555;
+      margin-bottom: 15px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 10px 20px;
+      background: linear-gradient(90deg, #ff6f61, #d84315);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background 0.3s;
+    }
+
+    .btn:hover {
+      background: linear-gradient(90deg, #ff7043, #c62828);
+    }
+
+    .highlight {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background: gold;
+      color: black;
+      font-size: 0.8rem;
+      font-weight: bold;
+      padding: 5px 10px;
+      border-radius: 12px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>🎁 Exclusive Rewards for You</header>
+
+  <div class="reward-container">
+    <div class="reward-card">
+      <div class="highlight">Hot</div>
+      <img src="https://img.icons8.com/color/96/discount--v1.png" alt="Discount">
+      <h3>Flat 20% Off</h3>
+      <p>Enjoy flat 20% off on hotel bookings in Jharkhand.</p>
+      <a href="#" class="btn">Claim Now</a>
+    </div>
+
+    <div class="reward-card">
+      <img src="https://img.icons8.com/color/96/loyalty-card.png" alt="Loyalty">
+      <h3>Loyalty Points</h3>
+      <p>Earn points on every trip booking & redeem them later.</p>
+      <a href="#" class="btn">Earn Points</a>
+    </div>
+
+    <div class="reward-card">
+      <div class="highlight">New</div>
+      <img src="https://img.icons8.com/color/96/gift.png" alt="Free Gift">
+      <h3>Free Souvenir</h3>
+      <p>Get a free Jharkhand handicraft souvenir on temple tours.</p>
+      <a href="#" class="btn">Grab Gift</a>
+    </div>
+
+    <div class="reward-card">
+      <img src="https://img.icons8.com/color/96/voucher.png" alt="Voucher">
+      <h3>Food Vouchers</h3>
+      <p>Free meal vouchers at select restaurants & food courts.</p>
+      <a href="#" class="btn">Use Voucher</a>
+    </div>
+
+    <div class="reward-card">
+      <img src="https://img.icons8.com/color/96/conference.png" alt="Group">
+      <h3>Group Discount</h3>
+      <p>Book for 5+ people and get an extra 15% discount.</p>
+      <a href="#" class="btn">Book Group</a>
+    </div>
+
+    <div class="reward-card">
+      <img src="https://img.icons8.com/color/96/taxi.png" alt="Travel">
+      <h3>Free Cab Ride</h3>
+      <p>First-time users get free cab rides up to ₹200 in Ranchi.</p>
+      <a href="#" class="btn">Ride Free</a>
+    </div>
+  </div>
+
+</body>
+</html>

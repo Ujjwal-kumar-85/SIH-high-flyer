@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Temples of Jharkhand</title>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f5f9f5;
+      color: #333;
+    }
+
+    header {
+      background: #2e7d32;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      font-size: 1.8rem;
+      font-weight: 700;
+    }
+
+    #search-bar {
+      text-align: center;
+      margin: 20px;
+    }
+    #search-input {
+      width: 60%;
+      padding: 12px;
+      font-size: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+
+    .card-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .card {
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+      overflow: hidden;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+    }
+
+    .card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .card-content {
+      padding: 15px;
+    }
+
+    .card-content h3 {
+      margin: 0 0 8px;
+      font-size: 1.2rem;
+      color: #2e7d32;
+    }
+
+    .card-content p {
+      font-size: 0.95rem;
+      margin-bottom: 10px;
+      color: #555;
+    }
+
+    .stars {
+      color: gold;
+      font-size: 1.1rem;
+    }
+  </style>
+</head>
+<body>
+
+  <header>⛩️ Famous Temples of Jharkhand</header>
+
+  <div id="search-bar">
+    <input id="search-input" type="text" placeholder="Search temples in Jharkhand...">
+  </div>
+
+  <div class="card-container" id="temple-list">
+    <!-- Temple Cards -->
+    <div class="card">
+      <img src="image/History-of-Baba-Baidyanath-Temple.jpg" alt="Baidyanath Temple">
+      <div class="card-content">
+        <h3>Baidyanath Temple, Deoghar</h3>
+        <p>One of the 12 Jyotirlingas, a sacred pilgrimage site.</p>
+        <div class="stars">★★★★★</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="image/Prashant hill.jpg" alt="Parasnath Hills Temple">
+      <div class="card-content">
+        <h3>Parasnath Hills, Giridih</h3>
+        <p>One of the most important Jain pilgrimage centers.</p>
+        <div class="stars">★★★★☆</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="image/Malka mesra temple.jpg" alt="Malka Mesra Temple">
+      <div class="card-content">
+        <h3>Malka Mesra Temple, Hazaribagh</h3>
+        <p>A serene temple known for scenic surroundings.</p>
+        <div class="stars">★★★★☆</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="image/Rajrappa temple.jpg" alt="Rajrappa Temple">
+      <div class="card-content">
+        <h3>Rajrappa Temple, Ramgarh</h3>
+        <p>Dedicated to Goddess Chhinnamasta, famous Shakti Peeth.</p>
+        <div class="stars">★★★★★</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="image/Angrabadi temple.jpg" alt="Angrabadi Temple">
+      <div class="card-content">
+        <h3>Angrabadi Temple, Ranchi</h3>
+        <p>A peaceful complex of temples dedicated to Shiva, Hanuman & Ram.</p>
+        <div class="stars">★★★☆☆</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="image/Tapovan mandir.jpg" alt="Tapovan Temple">
+      <div class="card-content">
+        <h3>Tapovan Temple, Deoghar</h3>
+        <p>Known for natural caves and connection with sage Valmiki.</p>
+        <div class="stars">★★★★☆</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="image/Sun temple Ranchi.jpg" alt="Sun Temple Ranchi">
+      <div class="card-content">
+        <h3>Sun Temple, Ranchi</h3>
+        <p>A unique temple with a massive chariot-shaped structure.</p>
+        <div class="stars">★★★★★</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="image/Pahari mandir ranchi.jpg" alt="Pahari Mandir">
+      <div class="card-content">
+        <h3>Pahari Mandir, Ranchi</h3>
+        <p>Famous temple of Lord Shiva on a hilltop with panoramic views.</p>
+        <div class="stars">★★★★☆</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="image/Naulakha temple.jpg" alt="Naulakha Temple">
+      <div class="card-content">
+        <h3>Naulakha Temple, Deoghar</h3>
+        <p>A historic temple with architecture similar to Ramakrishna Mission.</p>
+        <div class="stars">★★★☆☆</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="image/Itkhori temple.jpg" alt="Itkhori Temple">
+      <div class="card-content">
+        <h3>Itkhori Temple, Chatra</h3>
+        <p>Important Hindu-Buddhist site, dedicated to Goddess Kali.</p>
+        <div class="stars">★★★★★</div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const searchInput = document.getElementById("search-input");
+    const templeList = document.getElementById("temple-list");
+    const cards = templeList.getElementsByClassName("card");
+
+    searchInput.addEventListener("keyup", function() {
+      const filter = searchInput.value.toLowerCase();
+      for (let i = 0; i < cards.length; i++) {
+        const title = cards[i].getElementsByTagName("h3")[0];
+        if (title.innerText.toLowerCase().includes(filter)) {
+          cards[i].style.display = "";
+        } else {
+          cards[i].style.display = "none";
+        }
+      }
+    });
+  </script>
+</body>
+</html>

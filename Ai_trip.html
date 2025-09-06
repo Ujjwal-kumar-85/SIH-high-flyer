@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AI Trip Planner - Visit Jharkhand</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+    :root {
+      --green: #2e7d32;
+      --green-light: #4caf50;
+      --dark: #1b5e20;
+      --white: #fff;
+      --shadow: rgba(0,0,0,0.1);
+      --radius: 12px;
+      --transition: 0.3s ease;
+      --font: 'Poppins', sans-serif;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: var(--font); background: #f4f9f4; color: #222; }
+
+    header {
+      background: var(--green);
+      padding: 16px 40px;
+      color: var(--white);
+      font-weight: 700;
+      font-size: 1.3rem;
+      text-align: center;
+      box-shadow: 0 4px 12px var(--shadow);
+    }
+
+    .planner-container {
+      max-width: 800px;
+      margin: 50px auto;
+      background: var(--white);
+      padding: 40px;
+      border-radius: var(--radius);
+      box-shadow: 0 8px 20px var(--shadow);
+    }
+
+    h1 {
+      text-align: center;
+      color: var(--green);
+      margin-bottom: 20px;
+      font-size: 2rem;
+    }
+
+    p.subtitle {
+      text-align: center;
+      margin-bottom: 30px;
+      color: #555;
+    }
+
+    form { display: flex; flex-direction: column; gap: 20px; }
+
+    label {
+      font-weight: 600;
+      margin-bottom: 6px;
+      display: block;
+      color: #333;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 14px;
+      border: 1px solid #ccc;
+      border-radius: var(--radius);
+      font-size: 1rem;
+      outline: none;
+      transition: border var(--transition);
+    }
+
+    input:focus, select:focus, textarea:focus {
+      border-color: var(--green-light);
+    }
+
+    textarea { resize: vertical; }
+
+    button {
+      background: var(--green);
+      color: var(--white);
+      padding: 16px;
+      font-size: 1.1rem;
+      font-weight: 700;
+      border: none;
+      border-radius: var(--radius);
+      cursor: pointer;
+      transition: background var(--transition), transform var(--transition);
+    }
+
+    button:hover {
+      background: var(--green-light);
+      transform: translateY(-3px);
+    }
+
+    .result-box {
+      margin-top: 40px;
+      padding: 20px;
+      border-radius: var(--radius);
+      background: #e8f5e9;
+      border: 1px solid var(--green-light);
+      display: none;
+    }
+
+    .result-box h2 {
+      margin-bottom: 15px;
+      color: var(--dark);
+    }
+
+    footer {
+      margin-top: 60px;
+      text-align: center;
+      padding: 20px;
+      background: var(--dark);
+      color: #a5d6a7;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    Visit Jharkhand – AI Trip Planner
+  </header>
+
+  <div class="planner-container">
+    <h1>Plan Your Trip with AI</h1>
+    <p class="subtitle">Tell us your preferences, and our AI will create the perfect Jharkhand itinerary for you.</p>
+
+    <form id="tripForm">
+      <div>
+        <label for="name">Your Name</label>
+        <input type="text" id="name" placeholder="Enter your name" required />
+      </div>
+
+      <div>
+        <label for="days">Number of Days</label>
+        <input type="number" id="days" placeholder="e.g. 5" min="1" required />
+      </div>
+
+      <div>
+        <label for="budget">Budget (INR)</label>
+        <select id="budget" required>
+          <option value="">-- Select Budget --</option>
+          <option value="low">Low (₹5k–₹10k)</option>
+          <option value="medium">Medium (₹10k–₹25k)</option>
+          <option value="high">High (₹25k+)</option>
+        </select>
+      </div>
+
+      <div>
+        <label for="interests">Interests</label>
+        <textarea id="interests" rows="3" placeholder="e.g. waterfalls, temples, tribal culture"></textarea>
+      </div>
+
+      <div>
+        <label for="food">Food Preference</label>
+        <select id="food">
+          <option value="">-- Select Preference --</option>
+          <option value="veg">Vegetarian</option>
+          <option value="nonveg">Non-Vegetarian</option>
+          <option value="mixed">Mixed</option>
+        </select>
+      </div>
+
+      <button type="submit">Generate Itinerary</button>
+    </form>
+
+    <div class="result-box" id="result">
+      <h2>Your AI-Powered Itinerary</h2>
+      <p id="planOutput">Loading your plan...</p>
+    </div>
+  </div>
+
+  <footer>
+    © 2025 Government of Jharkhand. All rights reserved.
+  </footer>
+
+  <script>
+    document.getElementById("tripForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+
+      const name = document.getElementById("name").value;
+      const days = document.getElementById("days").value;
+      const budget = document.getElementById("budget").value;
+      const interests = document.getElementById("interests").value;
+      const food = document.getElementById("food").value;
+
+      const plan = `
+        Hello ${name}, here's a suggested ${days}-day trip:
+        - Budget Level: ${budget}
+        - Interests: ${interests || "General sightseeing"}
+        - Food Preference: ${food || "No preference"}
+        
+        Day 1: Arrival in Ranchi, visit waterfalls nearby.
+        Day 2: Explore temples and cultural sites.
+        Day 3: Tribal village experience with local cuisine.
+        Day 4: Wildlife safari at Betla National Park.
+        Day 5: Shopping in Ranchi marketplace, departure.
+      `;
+
+      document.getElementById("planOutput").innerText = plan;
+      document.getElementById("result").style.display = "block";
+    });
+  </script>
+</body>
+</html>

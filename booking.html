@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Restaurant Booking</title>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to right, #ffecd2, #fcb69f);
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background: #d84315;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      font-size: 1.8rem;
+      font-weight: bold;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 30px auto;
+      background: white;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+    }
+
+    .container h2 {
+      text-align: center;
+      color: #d84315;
+      margin-bottom: 20px;
+    }
+
+    label {
+      font-weight: 600;
+      display: block;
+      margin-top: 12px;
+      margin-bottom: 6px;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 1rem;
+    }
+
+    .btn {
+      width: 100%;
+      background: #d84315;
+      color: white;
+      border: none;
+      padding: 14px;
+      border-radius: 8px;
+      font-size: 1.1rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .btn:hover {
+      background: #a33210;
+    }
+  </style>
+</head>
+<body>
+
+  <header>🍴 Book Your Restaurant</header>
+
+  <div class="container">
+    <h2>Reservation Form</h2>
+    <form id="bookingForm">
+      <label for="from-date">From Date</label>
+      <input type="date" id="from-date" name="from-date" required>
+
+      <label for="to-date">To Date</label>
+      <input type="date" id="to-date" name="to-date" required>
+
+      <label for="time">Check-in Time</label>
+      <input type="time" id="time" name="time" required>
+
+      <label for="name">Full Name</label>
+      <input type="text" id="name" name="name" placeholder="Enter your name" required>
+
+      <label for="place">Place</label>
+      <input type="text" id="place" name="place" placeholder="Your city/place" required>
+
+      <label for="phone">Phone Number</label>
+      <input type="tel" id="phone" name="phone" placeholder="Enter phone number" required pattern="[0-9]{10}">
+
+      <label for="persons">Number of Persons</label>
+      <input type="number" id="persons" name="persons" min="1" max="50" required>
+
+      <label for="rooms">Number of Rooms</label>
+      <input type="number" id="rooms" name="rooms" min="0" max="10" required>
+
+      <button type="submit" class="btn">Book Now</button>
+    </form>
+  </div>
+
+  <script>
+    document.getElementById("bookingForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      alert("✅ Your booking request has been submitted successfully!");
+      this.reset();
+    });
+  </script>
+
+</body>
+</html>
